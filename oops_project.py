@@ -1,10 +1,30 @@
 class chatBook:
 
+    __userID = 1
+
     def __init__(self):
+        self.__name = 'Default User'  ## this is now hidden and cannot be accessed(but can be accessed if it is accessed like self._obj__attrName. This is called Encapsulation.)
+        self.id = chatBook.__userID
+        chatBook.__userID += 1
         self.userName = ''
         self.password = ''
         self.loggedIn = False
-        self.menu()
+        #self.menu()
+
+    @staticmethod
+    def getter_id():
+        return chatBook.__userID
+    
+    @staticmethod
+    def setter_id(val):
+        chatBook.__userID = val
+
+    def getter_name(self):
+        return self.__name
+    
+    def setter_name(self,value):
+        self.__name = value
+        
 
 
     def menu(self):
